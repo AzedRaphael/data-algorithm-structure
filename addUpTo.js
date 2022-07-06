@@ -283,9 +283,9 @@ let sentence = "this an absolutely beautiful life"
 //console.log(array.slice(-4,-2)) returns [ 'green', 'violet' ]
 
 //splice():it adds items at any position in the array. it means give me n(index) to length and replace spliced aread with third arg.
-// let array = new Array("white","red", "blue", "black","green","violet","scarlet","cyan")
-// console.log(array.splice(2,"yellow","scarlet")) //[ 'blue', 'black', 'green', 'violet', 'scarlet' ]
-// console.log(array) //[ 'white', 'red', 'yellow', 'scarlet', 'cyan' ]
+ //let array = new Array("white","red", "blue", "black","green","violet","scarlet","cyan")
+ //console.log(array.splice(2,"yellow","scarlet")) //[ 'blue', 'black', 'green', 'violet', 'scarlet' ]
+ //console.log(array) //[ 'white', 'red', 'yellow', 'scarlet', 'cyan' ]
 
 //forEach():
 //let array = new Array("white","red", "blue", "black","green","violet","scarlet","cyan")

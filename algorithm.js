@@ -199,3 +199,42 @@
 //     }
 // }
 // finderKeepers(array)
+
+//PROBLEM 13:Return a provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case
+// let string = "I am tall man"
+// function titleCase(sentence){
+//     let str = sentence.split(' ')
+//     let newArr = []
+//     for(item of str){
+//         item = item.charAt(0).toUpperCase() + item.slice(1)
+//         newArr.push(item)
+//     }  
+//     let newStr = newArr.join(" ")
+//     console.log(newStr)
+// }
+// titleCase(string)
+
+//PROBLEM 14: You are given two arrays and an index n. 
+//copy each item from the first array into the second index by inserting the items at index n. return the resulting array
+// let arr1 = [3,4,5,6,7,8]
+// let arr2 = [1,2,9,10]
+// let num = 1
+// function sliceAndSplice(array1,array2,n){
+//    let newArr=  array1.slice(n-1).reverse().join("")
+//    for(item of newArr){
+//     array2.splice(n+1,n-1,Number(item))
+//    }
+//    console.log(array2)
+// }
+// sliceAndSplice(arr1,arr2,num)
+
+//PROBLEM 15: return items that falsy in an array
+// let array = [9, "ate", false, null, 25]
+// function falsyBouncer(arr){
+//     for(item of arr){
+//         if(!item){
+//             continue;
+//         }else{console.log(item)}
+//     }
+// }
+// falsyBouncer(array)
