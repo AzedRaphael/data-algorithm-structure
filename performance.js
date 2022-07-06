@@ -1,20 +1,4 @@
-// const data = {
-//     "Ben10":[22,30,11,17,15,52,27,12],
-//      "Sameer":[5,17,30,33,40,22,26,10,11,45],
-//     "Zeeshan":[22,30,11,5,17,30,6,57]
-// }
 
-// for(const item in data){
-//      let newArr = [];
-//     for(element of data[item]){
-//         if(element >= 20){  
-//             newArr.push(element)
-//         }
-//     }
-//     if(newArr.length >= 5){
-//         console.log(`${item}: ${newArr}`)
-//     }
-// }
 
 //NO-2: OUTPUT: wordRank("The quick Brown Fox") =>  BROWN
 let text =   "the quick brown fox"
@@ -62,7 +46,7 @@ for(let item in myArray){
                 tempSum += Number(index)+1              
             }
         }
-    }  
+    }      
     if(tempSum > sum){
         sum = tempSum
         

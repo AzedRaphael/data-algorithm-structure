@@ -126,10 +126,10 @@
 
 // checkName()
 
-//PROTOTYPE AND METHODS
-//let word = "white"
-// let anotherWord = "this is Raphael Rapha the best programmer using thunder pc lol."
-// let sentence = "this an absolutely beautiful life"
+//PROTOTYPE AND METHODS FOR STRINGS
+let word = "White"
+let anotherWord = "this is Raphael Rapha the best programmer using thunder pc lol."
+let sentence = "this an absolutely beautiful life"
 //String.prototype.sentence = "Hello Raph welcome to js methods and objects"
 // String.prototype.repeat = function(){
 //     return this + this;
@@ -160,10 +160,10 @@
 //console.log(word.lastIndexOf("l")) returns 3
 
 //match(): returns all matches as an array from a search against a regex. .toString() or join() converts array to strings
-//let match = otherWords.match(/n/g) returns ["n", "n"]
-//let match = otherWords.match(/[Rapha]/g) returns ['h', 'R', 'a', 'p','h', 'a', 'h', 'p','a', 'h', 'p'] match values contained in the []
+//let match = anotherWord.match(/n/g) //returns ["n", "n"]
+//let match = anotherWord.match(/[Ra]/g) //returns ['h', 'R', 'a', 'p','h', 'a', 'h', 'p','a', 'h', 'p'] match values contained in the []
 // let match = otherWords.match(/(?:ha)+/g).join()
-// console.log(match)
+ //console.log(match)
 
 //replace:returns the replaced new value after searching a string for specific value
 // word = word.replace("hello", "hi")
@@ -264,51 +264,6 @@
 // }
 // compare(colorArray)
 
-//PROBLEM 4
-// let string = "a nanacy is an dfzdfvhvhfdg ghascdhvahjcbdsncvacxagscghcc awesome friend "
-// function wordRank(words) {
-//     let word = words.split(" ")
-//     let longestVal = "" 
-//     for(i=0; i<word.length; i++){  
-//        if(word[i].length > longestVal.length){
-//             longestVal = word[i]
-//        }
-//     } 
-//     return longestVal; 
-// }
-// console.log(wordRank(string))
-
-//PROBLEM 5
-let inputChar = "cade"
-let actualChar = "abcdefgh"
-let changeChar = "grdwqsdr"
-//conditions: 
-//actualChar.length===changeChar.length / changeChar cannot be repeated / inputChar.length !== actualChar.length / inputChar === actualChar
-//output:"dgwq"
-function switchChar(str1,str2,str3){
-    let arr = ""
-    let str=""
-    let errorMsg= "code broke check conditions"
-    arr = arr.concat(str1+ " "+str2 + " "+ str3).split(" ")
-    if(str2.length === str3.length){
-        let letter = str3[0]
-        for(let j=1; j<str3.length; j++){
-            if(letter !== str3[j]){
-                if(str1.length !== str2.length ){
-                    for(val in str1){
-                        let check = str2.indexOf(str1[val])
-                        str += str3[check]                        
-                    }
-                    console.log(str)
-                }
-                return
-            }
-        }
-    }else{
-        console.log(errorMsg)
-    }
-}
-switchChar(inputChar,actualChar,changeChar)
 //pop() and push(): pop removes the last element in the array one piece at a time and reduces the array length by 1 while push added as many...
 //element thorugh the back.
 // let array = new Array("white","red", "blue", "black")
@@ -328,12 +283,12 @@ switchChar(inputChar,actualChar,changeChar)
 //console.log(array.slice(-4,-2)) returns [ 'green', 'violet' ]
 
 //splice():it adds items at any position in the array. it means give me n(index) to length and replace spliced aread with third arg.
-//let array = new Array("white","red", "blue", "black","green","violet","scarlet","cyan")
-//console.log(array.splice(2,5,"yellow","scarlet")) [ 'blue', 'black', 'green', 'violet', 'scarlet' ]
-//console.log(array) [ 'white', 'red', 'yellow', 'scarlet', 'cyan' ]
+// let array = new Array("white","red", "blue", "black","green","violet","scarlet","cyan")
+// console.log(array.splice(2,"yellow","scarlet")) //[ 'blue', 'black', 'green', 'violet', 'scarlet' ]
+// console.log(array) //[ 'white', 'red', 'yellow', 'scarlet', 'cyan' ]
 
 //forEach():
-let array = new Array("white","red", "blue", "black","green","violet","scarlet","cyan")
+//let array = new Array("white","red", "blue", "black","green","violet","scarlet","cyan")
 
 
 
