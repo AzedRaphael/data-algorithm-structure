@@ -282,4 +282,65 @@
 //     console.log(newArr)
 // }
 // chunkArray(arr,num)
-//this is a test change
+
+//PROBLEM 19: ANAGRAM
+// let str1 = "anagram"
+// let str2 = "nagaram"
+// function anagram(string1, string2){
+//     if(string1.length !== string2.length){
+//         return false
+//     }
+//     let counter1 = {}
+    
+//     for(i=0; i<string1.length; i++){
+//         counter1[string1[i]] =counter1[string1[i]] + 1 || 1;
+//     }        
+//     for(j=0; j<string2.length; j++){
+//         if(!counter1[string2[j]]){
+//             return false
+//         }else{
+//             counter1[string2[j]] --
+//         }
+//     }
+//     return true
+// }
+// console.log(anagram(str1, str2))
+
+//PROBLEM 20: implement a function called count unique values which accepts a sorted array and counts the unique values in the array. negative numbers
+// in the array will be involved.
+//SOLUTION1
+// let arr = [1,2,2,2,2,1,3,3,3,1,-2,-3,-2,-3]
+// function countUniqueValues(array){
+//     let counter = {}
+//     let sum = 0
+//     for(item =0; item<array.length; item++){
+//         let i = array[item]
+//         counter[i] = counter[i] + 1 || 1
+//     }
+//     for(key in counter){
+//         if(counter[key] > 1){
+//             sum += counter[key] 
+//         }
+//     }
+//     return sum
+// }
+// console.log(countUniqueValues(arr))
+
+//SOLUTION2 FOR PROBLEM 20: find the numbers that occurred more than once
+// let arr = [1,2,2,2,2,1,3,3,3,1,-2,-3,-2,-3]
+// function sortedArr(a,b){
+//  return a-b
+// }
+// function countUniqueValues(array){
+//     array.sort(sortedArr)
+//     console.log(array)
+//     let i = 0;
+//     for(j=1; j<array.length; j++){
+//         if(array[i] !== array[j]){
+//             i++;
+//             array[i] = array[j]
+//         }
+//     }
+//     return  i + 1
+// }
+// console.log(countUniqueValues(arr))
