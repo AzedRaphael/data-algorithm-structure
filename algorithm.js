@@ -238,3 +238,17 @@
 //     }
 // }
 // falsyBouncer(array)
+
+//PROBLEM16: return the lowest index at which a value(second arg) should be inserted into an array(first arg)
+//once it has been sorted. the returned value should be a number(the index of second arg)
+// let array = [3,10,5,20]
+// let num = 5
+// function sortFunc(a,b){
+//     return a-b
+// }
+// function getIndex(arr,n){
+//     arr.push(n)
+//     let sortedArr = arr.sort(sortFunc)
+//     console.log(sortedArr.indexOf(n))
+// }
+// getIndex(array,num)

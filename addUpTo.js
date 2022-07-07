@@ -127,9 +127,9 @@
 // checkName()
 
 //PROTOTYPE AND METHODS FOR STRINGS
-let word = "White"
-let anotherWord = "this is Raphael Rapha the best programmer using thunder pc lol."
-let sentence = "this an absolutely beautiful life"
+// let word = "White"
+// let anotherWord = "this is Raphael Rapha the best programmer using thunder pc lol."
+// let sentence = "this an absolutely beautiful life"
 //String.prototype.sentence = "Hello Raph welcome to js methods and objects"
 // String.prototype.repeat = function(){
 //     return this + this;
