@@ -290,6 +290,28 @@
 //forEach():
 //let array = new Array("white","red", "blue", "black","green","violet","scarlet","cyan")
 
+//==================================================================
+//OBJECT ORIENTED PROGRAMMING
+//an argument object acts like a local variables of a function
+// let x = function(){
+//     return arguments;
+// }
+// console.log(x("cow",2,3,"dogs"))
 
+// let x = function(){
+//     let argCreated = Array.prototype.slice.call(arguments);
+//     return argCreated.reduce(function(prevVal, currVal){
+//         return prevVal + currVal
+//     })
+// }
 
+//call() makes sure we apply "this" to the intended target by vinding it to whatever we name in the inside parenthesis
+// //which means from this particular function which is named x , call its arguments -z in this case
+// let z = "i am a z"
+// let y =function(){
+//     let arr = Array.prototype.slice.call(z);
+//     return arr;
+// }
+// console.log(y())
 
+//
