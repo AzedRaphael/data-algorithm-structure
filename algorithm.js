@@ -252,3 +252,33 @@
 //     console.log(sortedArr.indexOf(n))
 // }
 // getIndex(array,num)
+
+//PROBLEM 17:
+// let array = ["liAen","line"]
+// function mutation(arr){
+//     let newArr = arr.pop().split("")
+//     let newArr2 = arr.join().toLowerCase().split("")
+        
+//     for(i=0; i<newArr2.length; i++){
+//          let index = newArr.indexOf(newArr2[i])
+//         if(index === -1 ){
+//             console.log(`the item ${newArr2[i]} is ${false}`)
+//             break;
+//         }
+//         else{
+//             console.log(`all other items are ${true}`)
+//         }
+//     }    
+// }
+// mutation(array)
+
+//PROBLEM 18:
+// let arr =["a", "b", 1, 2]
+// let num =1
+// let newArr = []
+// function chunkArray(array,n){
+//     let newArray = array.splice(-n)
+//     newArr.push(arr,newArray)
+//     console.log(newArr)
+// }
+// chunkArray(arr,num)
