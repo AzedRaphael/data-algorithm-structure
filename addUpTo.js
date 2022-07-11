@@ -314,4 +314,23 @@
 // }
 // console.log(y())
 
-//
+//CLOSURES
+// let flyKite = function(kite){
+//     let boy = "boy holds the kite"
+
+//     function girl(){
+//         boy = "girl is holding the kite"
+//         return boy
+//     }
+//     if(kite === "boy"){
+//         return boy
+//     }else{
+//         return girl();
+//     }
+// }
+// console.log(flyKite("girl"))
+
+//JS looks at the outer function at the time of calling and makes an inventory list of boy and varaible then
+//makes and inventory of the inner firl func with variable mapped boy. as long as the fxn is processing
+//the js points at the surrounding variable called boy. function girl has  FREE VARIABLE of boy. this is closure
+

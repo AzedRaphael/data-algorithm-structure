@@ -214,6 +214,7 @@
 // }
 // titleCase(string)
 
+//DATE: 7/7/2022 thursday
 //PROBLEM 14: You are given two arrays and an index n. 
 //copy each item from the first array into the second index by inserting the items at index n. return the resulting array
 // let arr1 = [3,4,5,6,7,8]
@@ -344,3 +345,190 @@
 //     return  i + 1
 // }
 // console.log(countUniqueValues(arr))
+
+
+//SLIDING WINDOW PATTERN:It is useful for keeping track of a subset of data in a larage data set.
+//let array = [1,2,4,5,7,2,4,5,2,8,20]
+//let num = 4
+// function findLongUnique(arr,n){
+//     let max = Number.NEGATIVE_INFINITY
+//   for(i=0; i<arr.length-n+1; i++){
+//     let temp = 0;
+//     for(j=0; j<n; j++){
+//         temp += arr[i+j]
+//     }
+//     if(temp > max){
+//         max = temp
+//     }
+//   }  
+//   console.log(max)
+// }
+// findLongUnique(array,num)
+
+// function maxSumArray(arr,n){
+//     if(n > arr.length){
+//         return null
+//     }
+//     let max = 0
+//     let temp = 0
+//     for(i=0; i<n; i++){
+//         max += arr[i];
+//     }
+//     temp = max;
+//     for(i=n; i<arr.length; i++){
+//         temp = temp - arr[i - n] + arr[i]
+//         max = Math.max(max,temp)
+//     }
+//     return max
+// }
+// console.log(maxSumArray(array,num))
+
+//DIVIDE AND CONQUER: This pattern involves dividing a data set into smaller chunks and then repeating a process witha subset of data
+//EXAMPLE:Given a sroted array of integers write a function called search that accepts a value and returns the index where tha value passed to the function
+// is located.
+//SOLUTION 1
+//  let array = [2,4,5,6,7,1,3,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
+//  let num = 7
+// function sortedArr(a,b){
+//     return a-b
+// }
+// function search(arr,n){
+//     let newArr = arr.sort(sortedArr)
+//     let index = newArr.indexOf(n)
+//     return index
+// }
+//console.log(search(array,num))
+
+
+//SOLUTION 2
+// function search(arr,n){
+//     let newArr = arr.sort(sortedArr)
+//     let min = 0;
+//     let max = newArr.length - 1
+
+//     while(min <= max){
+//         let middle = Math.floor((min+max)/2)
+//         let currentNum = newArr[middle]
+
+//         if(currentNum < n ){
+//             min = middle + 1
+//         }
+//         else if(currentNum > n){
+//             max = middle - 1
+//         }else {
+//             return middle
+//         }
+//     }
+//     return -1;
+// }
+// console.log(search(array,num))
+
+// let t1 = performance.now();
+// console.log(search(array,num))
+// let t2 = performance.now();
+// console.log(`Time elapsed: ${t2-t1/1000} seconds`)
+
+
+//PROBLEM: find if second string is an anagram of the first
+// let num1 = "182"
+// let num2 = "811"
+// function sameFreq(number1,number2){
+//     let count = {}
+//  for(i=0; i<number1.length; i++){
+  
+//    let letter = number1[i]
+//    count[letter] = count[letter] + 1 || 1
+//  }
+//  for(i=0; i<number2.length; i++){
+//     if(!count[number2[i]]){
+//         return false
+//     }
+//     else{
+//         count[number2[i]]--
+//     }
+//  }
+//  return true
+// }
+// console.log(sameFreq(num1,num2))
+
+//PROBLEM: check for duplicates in array and return true if there are duplicates and false if there is none.
+// let arr = [1,2,3]
+// function checkDups(array){
+//     let count = {}
+//     for(i=0; i<array.length; i++){
+//         let letter = array[i]
+//         count[letter] = count[letter] + 1 || 1
+//     }
+//     for(key in count){
+//         if(count[key] > 1){
+//             return true
+//         }
+//         return false
+//     }
+    
+// }
+// console.log(checkDups(arr))
+
+//date: 10/7/2022. This method is a recursive function. calling an inner function pointing to an same outer function.
+// function factorial(num){
+//     if(num === 1) return 1;
+//     return num * factorial(num-1)
+// }
+// console.log(factorial(7))
+
+//solution 2:factorial solved non-recursively
+// function factorial(num){
+//     let n = 1
+//     for(i= num; i> 1; i--){
+//         console.log(i)
+//         n *= i
+//     }
+//     console.log(n)
+// }
+// factorial(4)
+
+//PROBLEM: RETURN THE OFF NUMBERS IN ANA RRAY USING RECURSION
+// function collectOdds (arr){
+//     let result = [];
+//     function helper (num){
+//         if(num.length === 0){
+//             return;
+//         }
+//         if(num[0] % 2 !== 0){
+//             result.push(num[0])
+//         }
+//         helper(num.slice(1))
+//     }
+//     helper(arr)
+//     return result;
+// }
+
+// console.log(collectOdds([1,2,3,4,5,6,7,8,9,10]))
+
+//FIBONACCI NUMBERS: the iterative solution
+// let a = 1;
+// let b = 1;
+// let result = [1,1]
+// let newNum;
+// function fibonacci(n){
+//     for(i=0; i<n; i++){
+//         newNum = a + b;
+//         result.push(newNum)
+//         a = b;
+//         b = newNum
+//     }
+//     return `${result} `
+// }
+// console.log(fibonacci(10))
+
+//Recursive solution
+// function fibonacci(n){
+//     let result;
+//     if(n === 1 || n===2){
+//         return 1
+//     }else{
+//         result = fibonacci(n-1) + fibonacci(n-2)
+//     }
+//     return result;
+// }
+// console.log(fibonacci(10))
