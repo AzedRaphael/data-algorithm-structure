@@ -532,3 +532,205 @@
 //     return result;
 // }
 // console.log(fibonacci(10))
+// let n = 2;
+// let x = 2;
+// function powerOf(num,pow){
+//     if(pow === 0)return 1;
+//     return num * powerOf(num,pow-1)
+// }
+// console.log(powerOf(n,x))
+
+//productOfArray iterative
+// let array = [2,4,5,6,3]
+// function productOfArray(arr){
+    
+//     let result = 1;
+//     for(item of arr){
+//         result *= item
+//     }
+//     console.log(result)
+// }
+// console.log(productOfArray(array))
+
+//productOfArray recursive
+// let array = [2,4,5,6,3]
+// function productOfArray(arr){
+//     if(arr.length === 0)return 1;
+//     return arr[0] * productOfArray(arr.slice(1))
+// }
+// console.log(productOfArray(array))
+
+//recursive Range: mulitiply the range of n that is from 1 to n
+// function recursiveRange(n){
+//     if(n === 1) return 1
+//     return n * recursiveRange(n-1)
+// }
+// console.log(recursiveRange(4))
+
+//recursive reverse:
+// let str = "reverse"
+// function recursiveReverse(str){
+
+//     if(str.length<=1) return str;
+
+//     return recursiveReverse(str.slice(1)) + str[0] 
+// }
+// console.log(recursiveReverse(str))
+
+//addUpArray:
+// let array = [2,5,7,8,9,10]
+// function addUpArray(arr){
+//     if(arr.length === 0) return 1;
+//     return arr[0] + addUpArray(arr.slice(1))
+// }
+// console.log(addUpArray(array))
+
+//someRecur:
+// let array = [2,3,4,5,6]
+// let isOdd = val => val % 2 !== 0;
+// function someRecur(arr,callback){
+//     if(arr.length === 0) return false;
+//     if(callback(arr[0])) return true;
+//     return someRecur(arr.slice(1),callback)
+// }
+// console.log(someRecur(array,isOdd))
+
+//capitalize string in an array
+// let array = ["hello", "raph", "how", "are", "you"]
+// function capitalizeFirst(arr){
+//     if(arr.length === 1){
+//         return arr[0].charAt(0).toUpperCase() + arr[0].slice(1)
+//     };
+//     return (arr[0].charAt(0).toUpperCase() + arr[0].slice(1)) +" " + capitalizeFirst(arr.slice(1))
+// }
+// console.log(capitalizeFirst(array))
+
+//flatten: flatten with and without recursion
+// let array = [1,2,3, [4,5,6], 7,[[[8,9,10]]]]
+// console.log(array.flat(Infinity))
+
+// function flatten(arr){
+//     let newArr = []
+//    for(i=0; i<arr.length; i++){
+//         if(Array.isArray(arr[i])){
+//             newArr.push(...flatten(arr[i]))
+//         }
+//         else{newArr.push(arr[i])}
+//    }
+//    return newArr
+// }
+// console.log(flatten(array))
+
+//nestedEvenSum
+// var obj1 = {
+//     outer: 2,
+//     another: 4,
+//     obj: {
+//       inner: 2,
+//       otherObj: {
+//         superInner: 2,
+//         notANumber: true,
+//         alsoNotANumber: "yup"
+//       }
+//     }
+// }
+// const isEven = val=> val%2 === 0;
+// function nestedEvenSum(objs){
+//     let sum = 0;
+//     for( key in objs){
+//         if(objs[key].constructor === Object){
+//            sum += nestedEvenSum(objs[key])
+//         }
+//         if(objs[key] % 2 === 0){
+//             sum += objs[key]
+//         }
+//     }
+//     return sum
+// }
+// console.log(nestedEvenSum(obj1))
+
+//capitalizeWords:
+// let string = "i am a man"
+// function capitalizeWords(str){
+//     if(str.length === 1){
+//         return str[0].toUpperCase() 
+//     }
+//    return str[0].toUpperCase() + capitalizeWords(str.slice(1))
+// }
+// console.log(capitalizeWords(string))
+
+// let array = ["i", "am", "learning", "recursion", "and", "its", "easy"]
+// function capitalizeWords(arr){
+//     let newArr = []
+//     if(arr.length === 1){
+//         return arr[0].toUpperCase()
+//     }
+//     newArr.push(arr[0].toUpperCase())    
+//     return newArr + " " + capitalizeWords(arr.slice(1))
+// }
+// console.log(capitalizeWords(array))
+
+//stringifyNumbers
+// let obj = {
+//     num: 1,
+//     test: [],
+//     data: {
+//         val: 4,
+//         info: {
+//             isRight: true,
+//             random: 66
+//         }
+//     }
+// }
+
+// function stringifyNums(o){
+//     let newObj = {}
+//     for(key in o){
+//         if(o[key].constructor === Object){
+//             newObj[key]= stringifyNums(o[key]) 
+//         }
+//         else if(o[key].constructor === Number){
+//             newObj[key] = o[key].toString()   
+//         }
+//         else{
+//             newObj[key] = o[key]
+//         }
+//     }
+//     return newObj
+// }
+// console.log(stringifyNums(obj))
+
+// //collectStrings
+
+// const obj = {
+//     stuff: "foo",
+//     data: {
+//         val: {
+//             thing: {
+//                 info: "bar",
+//                 moreInfo: {
+//                     evenMoreInfo: {
+//                         weMadeIt: "baz"
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// function collectStrings(o){
+//     let newArr = []
+//     for(key in o){
+//         if(o[key].constructor === Object){
+//             newArr.push(...collectStrings(o[key]))
+//         }
+//         else if(o[key === undefined]){
+//             newArr
+//         }
+//         else{
+//             newArr.push(o[key])
+//         }
+//     }
+//     return newArr
+// }
+// console.log(collectStrings(obj))
