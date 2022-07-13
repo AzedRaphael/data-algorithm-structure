@@ -348,8 +348,8 @@
 
 
 //SLIDING WINDOW PATTERN:It is useful for keeping track of a subset of data in a larage data set.
-//let array = [1,2,4,5,7,2,4,5,2,8,20]
-//let num = 4
+// let array = [1,2,4,5,7,2,4,5,2,8,20]
+// let num = 4
 // function findLongUnique(arr,n){
 //     let max = Number.NEGATIVE_INFINITY
 //   for(i=0; i<arr.length-n+1; i++){
@@ -711,6 +711,12 @@
 //                 moreInfo: {
 //                     evenMoreInfo: {
 //                         weMadeIt: "baz"
+//                     },
+//                     addMoreInfo: {
+//                         IMadeIt: "raph",
+//                         addedMoreInfo: {
+//                              MadeIt: "crame"
+//                         }
 //                     }
 //                 }
 //             }
@@ -734,3 +740,106 @@
 //     return newArr
 // }
 // console.log(collectStrings(obj))
+
+//fibonacci sequence
+// function fibonacci(n){
+//     let result = [1,1]
+//     if(n <= 1) return result=[1];
+//     if(n === 2) return result;
+
+//     if(n > 2){
+//         for(i=0; i<n-2; i++){
+//             result.push(result[result.length-1] + result[result.length-2])
+//         }
+//     }
+//     return result
+// }
+// console.log(fibonacci(10))
+
+//leastSubstring
+// let array = [1,2,4,5,7,2,4,5,2,8,20]
+// let num = 4
+// function maxSumArray(arr,n){
+//     if(n > arr.length){
+//         return null
+//     }
+//     let max = 0
+//     let temp = 0
+//     for(i=0; i<n; i++){
+//         max += arr[i];
+//     }
+//     temp = max;
+//     for(i=n; i<arr.length; i++){
+//         temp = temp - arr[i - n] + arr[i]
+//         max = Math.max(max,temp)
+//     }
+//     return max
+// }
+// console.log(maxSumArray(array,num))
+
+// function findLongUnique(arr,n){
+//     let max = Number.NEGATIVE_INFINITY
+//   for(i=0; i<arr.length-n+1; i++){
+//     let temp = 0;
+//     for(j=0; j<n; j++){
+//         temp += arr[i+j]
+//     }
+//     if(temp > max){
+//         max = temp
+//     }
+//   }  
+//   console.log(max)
+// }
+
+
+// function answer([str,subStr]){
+//     let result = ""
+//     let origin = 0;
+//     let end = subStr.length;
+
+//     for(i=0; i<str.length; i++){
+//         let qq = str.split("").slice(origin,end)
+        
+//         result = qq.join("");
+//         console.log(result)
+//         let ss = qq.sort()
+       
+//         let ee= subStr.split("").sort();
+        
+//         if(ss.join("") === ee.join("")){
+//             break;
+//         }else{
+//             origin++;
+//             end++
+//         }
+//     }
+//     return result
+// }
+// console.log(answer(["ahffaksfajeeubsne","fakh"]))
+
+//searching algorithm
+let array = [2,3,4,5,68,3,5,9]
+let value = 1
+// function linearSearch(arr,val){
+//     let result;
+//     for(index in arr){
+//         if(arr[index] === val){
+//             result =  `the index of ${arr[index]} is ${index}`
+//             break
+//         }
+//         else{
+//             result = `no value found so index is -1 `
+//         }
+//     }
+//     return result
+// }
+// console.log(linearSearch(array,value))
+
+//refactor the above code
+function linearSearch(arr,val){
+    for(index in arr){
+        if(arr[index] === val) return `the index of ${arr[index]} is ${index}`       
+    }
+    return `no value found so index is -1 `
+}
+console.log(linearSearch(array,value))
