@@ -334,3 +334,38 @@
 //makes and inventory of the inner firl func with variable mapped boy. as long as the fxn is processing
 //the js points at the surrounding variable called boy. function girl has  FREE VARIABLE of boy. this is closure
 
+let firstStr = "ahffaksfajeeubsne"
+let secondStr = "jefaa"
+//output:aksfaje
+function leastSubstring(first,second){
+    let maxArr = [];
+    let temp = 0;
+    let max = 0;
+    second = second.split("")
+    
+    let secLength = second.length
+    for(i=0; i<first.length-secLength; i++){
+        maxArr.push(first[i])
+    }
+ 
+   
+    temp = max;
+    for(i=secLength; i<first.length; i++){
+         maxArr.shift()
+         maxArr.push(first[i])
+         console.log(maxArr)
+        //  let keyArr = []
+        //  for(key in second){
+        //     if(maxArr.includes(second[key])){
+        //         console.log(maxArr)
+        //         second = maxArr.slice(key,1)
+        //     }
+        //     console.log(keyArr+=second[key])  
+        // }
+   
+    }
+    
+   
+   // return temp
+}
+console.log(leastSubstring(firstStr,secondStr))
