@@ -818,8 +818,8 @@
 // console.log(answer(["ahffaksfajeeubsne","fakh"]))
 
 //searching algorithm
-let array = [2,3,4,5,68,3,5,9]
-let value = 1
+// let array = [2,3,4,5,68,3,5,9]
+// let value = 1
 // function linearSearch(arr,val){
 //     let result;
 //     for(index in arr){
@@ -836,10 +836,143 @@ let value = 1
 // console.log(linearSearch(array,value))
 
 //refactor the above code
-function linearSearch(arr,val){
-    for(index in arr){
-        if(arr[index] === val) return `the index of ${arr[index]} is ${index}`       
-    }
-    return `no value found so index is -1 `
+// function linearSearch(arr,val){
+//     for(index in arr){
+//         if(arr[index] === val) return `the index of ${arr[index]} is ${index}`       
+//     }
+//     return `no value found so index is -1 `
+// }
+// console.log(linearSearch(array,value))
+
+//     while(min <= max){
+//         let middle = Math.floor((min+max)/2)
+//         let currentNum = newArr[middle]
+
+//         if(currentNum < n ){
+//             min = middle + 1
+//         }
+//         else if(currentNum > n){
+//             max = middle - 1
+//         }else {
+//             return middle
+//         }
+//     }
+//     return -1;
+// }
+// console.log(search(array,num))
+
+//binary search
+// let array = [2,3,4,5,12,15,24,32,33,34,35,56,57,59,60,61,62,67,72,98]
+// let value =1
+// function binarySearch(arr,val){
+//     let leftPointer = 0
+//     let rightPointer = arr.length-1
+//     let middle = Math.floor((leftPointer + rightPointer)/2)
+//     while(leftPointer <= rightPointer ){
+//         if(val < array[middle])rightPointer = middle - 1
+//         else leftPointer = middle + 1
+//         middle = Math.floor((leftPointer + rightPointer)/2)       
+//     }
+//     return arr[middle] === val ? middle : `${val} does not exist in the array`; 
+// }
+// console.log(binarySearch(array,value)) 
+
+
+//Palindrome:recursive solution
+// let string = "race car"
+// string = string.split(" ").join("")
+
+// function isPalindrome(str){
+//     if(str.length === 1){
+//         return true
+//     }
+//     if(str.length === 2){
+//         return str[0] === str[1]
+//     }    
+//     if(str[0] === str.slice(-1)){
+//         return  isPalindrome(str.slice(1,-1))
+//     }
+//     return false
+// }
+// console.log(isPalindrome(string))
+
+//stringSearch()
+// let string = "omgzomg"
+// let subStr = "omg"
+// function stringSearch(str,s){
+//     let stringObj= 0
+//     for(i=0; i<str.length; i++){
+//        for( j=0; j<s.length; j++){
+//             console.log(str[i+j], s[j])
+//             if(s[j] !== str[i+j] ){
+//                 console.log("BREAK")
+//                 break;
+//             }
+//             if(j === s.length -1){
+//                 console.log("FOUND ONE")
+//                 stringObj++
+//             }
+//        }
+//     }
+//     console.log(stringObj)
+// }
+
+// stringSearch(string, subStr)
+// let array = ["ahffaksfajeeubsne", "jefaa"]
+// function leastSubstring(arr){
+//     arr[1] = arr[1].sort()
+//     let newArr = []
+//     for(i=0; i<arr[0].length; i++){
+//         for(j=0; j<arr[1].length; j++){
+// console.log(arr[1][j])
+//         }
+//     }
+// }
+// leastSubstring(array)
+
+//SORTING ALGORITHM
+//Bubble Sort:this sorts a collection
+// function bubbleSort(arr){
+//     for(i=arr.length; i > 0; i--){
+//         for(j=0; j<i-1; j++){
+//             console.log(arr,arr[j], arr[j+1])
+//             if(arr[j] > arr[j+1]){
+//                 let temp = 0
+//                 temp = arr[j]
+//                 arr[j] = arr[j+1]
+//                 arr[j+1]= temp
+//             }
+//         }
+//     }
+//     return arr
+// }
+// console.log(bubbleSort([32,21,43,51,1,3,46,10,5]))
+
+//SOLUTION2 (optimized)
+// function bubbleSort(arr){
+//     const swap = (arr,id1,id2)=>{
+//         [arr[id1], arr[id2]] = [arr[id2], arr[id1]]
+//     }
+//     let noSwaps;
+//     for(i=arr.length; i > 0; i--){
+//         noSwaps = true;
+//         for(j=0; j<i-1; j++){
+//             console.log(arr,arr[j], arr[j+1])
+//             if(arr[j] > arr[j+1]){
+//                 swap(arr,j,j+1)
+//                 noSwaps = false;
+//             }
+//         }
+//         if(noSwaps)break;
+//     }
+//     return arr
+// }
+// console.log(bubbleSort([32,1,2,3,4,5]))
+
+//SELECTION SORT:
+
+function selectionSort(arr){
+   
+    return arr
 }
-console.log(linearSearch(array,value))
+console.log(selectionSort([5,1,3,45,2]))
