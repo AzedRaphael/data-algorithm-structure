@@ -879,20 +879,26 @@
 
 
 //Palindrome:recursive solution
-// let string = "race car"
-// string = string.split(" ").join("")
+// let string = "kayaka is where madam redivider to work at noon"
+// string = string.split(" ")
 
 // function isPalindrome(str){
-//     if(str.length === 1){
-//         return true
+//     let array = []
+    
+//     for(i=0; i<str.length; i++){
+//         if(str[i].length % 2 !== 0){
+//             array.push(str[i])
+//         }
 //     }
-//     if(str.length === 2){
-//         return str[0] === str[1]
-//     }    
-//     if(str[0] === str.slice(-1)){
-//         return  isPalindrome(str.slice(1,-1))
+//     let newArr = []
+//     for(j=0; j<array.length; j++){
+//         let element = array[j]
+//         let check = element.split("").reverse().join("")
+//         if(element === check){
+//             newArr.push(element.length)
+//         }
 //     }
-//     return false
+//     return Math.max(...newArr)
 // }
 // console.log(isPalindrome(string))
 
@@ -971,8 +977,96 @@
 
 //SELECTION SORT:
 
-function selectionSort(arr){
+// function selectionSort(arr){
    
-    return arr
-}
-console.log(selectionSort([5,1,3,45,2]))
+//     return arr
+// }
+// console.log(selectionSort([5,1,3,45,2]))
+
+// function armstrong(number){
+//     let tempNum = number
+//     let count = Math.floor(Math.log10(Math.abs(number))) + 1
+//     number = number.toString().split("")
+//     let total = [];
+//     let sum = 0;
+//     for(i=0; i<number.length; i++){
+//         let num = Math.pow(Number(number[i]),count)
+//         total.push(num)      
+//     }
+//     sum = total.reduce((a,b)=> a+ b)
+//     if(sum !== tempNum){
+//         return `NO ${tempNum} is NOT an armstrong`
+//     }else{
+//         return `YES ${tempNum} is an armstrong`
+//     }
+// }
+// console.log(armstrong(371))
+
+// function pigLatin(string){
+//     let vowel = ['a', 'e', 'i', 'o', 'u']
+//     string = string.split('')
+//     let newStr = string
+//     let str = Math.ceil((newStr.length-1) / 2)
+//     let middle = vowel.indexOf(newStr[str])
+    
+//     for(item in string){
+//         let index = vowel.indexOf(string[item])
+//         let id = vowel.indexOf(string[0])
+//         //check middle is vowel 
+//         if(middle >= 0){
+//             let shifted = string.shift()
+//             string = string.concat(shifted)
+//             return string.concat(["w","a","y"])
+//         }
+//         //check without vowels
+//         if(index === -1 && middle === -1){
+//             return string
+//         }
+//         //check starts with consonant
+//         if(index === -1 && id === -1){
+//             let shiftedVal = string.shift()
+//             string = string.concat(shiftedVal)
+//             return string.concat(["w","a","y"].splice(1))
+//         }
+//         //check starts with vowel
+//         if(index >= 0 && id >= 0){
+//             string = string.concat(["w","a","y"])
+//             return string
+//         }
+//     }
+//     //return string.concat(["w","a","y"])
+// }
+// console.log(pigLatin('glove'))
+
+//FEAR NOT MISSING LETTER
+// function findMissingLetter(string){
+//     let alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+//     let array = [];
+
+//     let start = alphabet.indexOf(string[0])
+//     let end = alphabet.indexOf(string[string.length-1])
+    
+//     for(let i=start; i<=end; i++){
+//         array.push(alphabet[i])
+//     }
+//     for(let j=0; j<array.length; j++){
+//         if(!(string.includes(array[j]))){
+//             return array[j]
+//         }else{
+//             return undefined
+//         }
+//     }
+// }
+// console.log(findMissingLetter("ab"))
+
+//SUM ALL ODD NUMBERS IN A FIBONACCI SEQUENCE OF A GIVEN INDEX
+// function sumFibonacci(index){
+//     let result = [1,1]
+//     if(index === 1)return [1]
+//     if(index === 2) return result;
+//     for(i=1; i<index; i++)result.push(result[result.length - 1] + result[result.length - 2])
+//     let odd = result.filter(items => items % 2 !== 0)
+//     odd = odd.reduce((a,b)=>a+b)
+//     return odd
+// }
+// console.log(sumFibonacci(10))
