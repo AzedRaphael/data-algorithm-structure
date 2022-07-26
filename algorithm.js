@@ -1059,7 +1059,6 @@
 // }
 // console.log(findMissingLetter("ab"))
 
-//SUM ALL ODD NUMBERS IN A FIBONACCI SEQUENCE OF A GIVEN INDEX
 // function sumFibonacci(index){
 //     let result = [1,1]
 //     if(index === 1)return [1]
@@ -1070,3 +1069,18 @@
 //     return odd
 // }
 // console.log(sumFibonacci(10))
+
+//sum primes
+
+function sumPrimes(number){
+    let array = []
+    let result = [2,3]
+    for(let i=2; i<number; i++){
+        console.log(number[i])
+        if(number[i] % i == 0){
+            array.push(number[i])
+        }
+    }
+    return array
+}
+console.log(sumPrimes(10))

@@ -236,154 +236,6 @@
 //console.log(Student.enrolledStudents())
 
 //SINGLY LISTED LISTS
-// class Node{
-//     constructor(value,next){
-//         this.val = value;
-//         this.next = next;
-//     }
-// }
-
-// let first = new Node("Hi")
-// first.next = new Node("There")
-// first.next.next =new Node("Raphael")
-//THIS IS A DIRTY WAY TO POINT TO THE NEXT NODE
-//First create head and tail ppt to null then length to 0. For push(), the Node class should be vcalled in the SLL class and value accepted.
-// if no node head,assign head to newNode and tail to head. if there is a head, set tail.next to newNode and tail to newNode.
-//increment length by 1 and return this(for the sll)
-// class SinglyLinkedList{
-//     constructor(){
-//         this.head = null;
-//         this.tail = null;
-//         this.length = 0;
-//     }
-//     push(val){
-//         let newNode = new Node(val)
-//         if(!this.head){
-//             this.head = newNode;
-//             this.tail = this.head;
-//         }else{
-//             this.tail.next = newNode;
-//             this.tail = newNode;
-//         }
-//         this.length++;
-//         return this;
-//     }
-//     pop(){
-//         if(!this.head) return undefined;
-//         let current = this.head;
-//         let newTail = current
-//         while(current.next){
-//             newTail = current
-//             current = current.next;
-//         }
-//         this.tail = newTail
-//         this.tail.next = null;
-//         this.length--;
-//         if(this.length === 0){
-//             this.head = null;
-//             this.tail = null;
-//         }
-//         return current;
-//     }
-//     shift(){
-//         if(!this.head) return undefined;
-//         let tempHead = this.head;
-//         this.head = tempHead.next;
-//         this.length--;   
-//         if(this.length === 0){
-//             this.head = null;
-//             this.tail = null;
-//         }   
-//         return tempHead
-//     }
-//     unshift(val){
-//         let newHead = new Node(val)
-
-//         if(!this.head){
-//             this.head = newHead;
-//             this.tail = newHead;
-//             this.length = 1;
-//         }
-//         newHead.next = this.head;
-//         this.head = newHead;
-//         this.length++;
-//         return this
-//     }
-//     get(val){
-//         if(val < 0 || val >= this.length) return null;
-//         let counter = 0
-//         let current = this.head
-//         while(counter !== val){
-//             current = current.next;
-//             counter++
-//         }
-//         return current
-//     }
-//     set(val,index){
-//         let foundVal = this.get(index)
-//         if(foundVal){
-//             foundVal.val = val;
-//             return true;
-//         }
-//         return false;
-//     }
-//     insert(val,index){
-//         if(index < 0 || index > this.length) return false;
-//         if(index === this.length) return this.push(val)
-//         if(index === 0) return this.unshift(val)
-//         let prevValue = this.get(index-1);
-//         let newNode = new Node(val)
-//         prevValue.next = newNode;
-//         newNode.next = prevValue.next.next;
-//         this.length++;
-//         return this;
-//     }
-//     remove(index){
-//         if(index < 0 || index > this.length) return undefined;
-//         if(index === this.length) return this.pop()
-//         if(index === 0) return this.shift()
-        
-//         let prevValue = this.get(index-1)
-//         let removeValue = prevValue.next
-//         prevValue.next = removeValue.next
-//         this.length--;
-//         return removeValue;
-//     }
-//     print(){
-//         var arr = [];
-//         let current = this.head;
-//         while(current){
-//             arr.push(current.val)
-//             current = current.next;
-//         } 
-//         console.log(arr)
-//     }
-//     reverse(){
-//         if(this.length === 0) return undefined;
-//         let node = this.head;
-//         this.head = this.tail
-//         this.tail = node
-
-//         let next; 
-//         let prev = null;
-//         for( let i=0; i<this.length; i++){
-//             next = node.next;
-//             node.next = prev;
-//             prev = node;
-//             node = next;
-//         }
-//         return this
-//     }
-// }
-
-
-// let list = new SinglyLinkedList()
-// console.log(list.push("Hi"))
-// console.log(list.push("az"))
-// console.log(list.push("raph"))
-// console.log(list.push("Good"))
-// console.log(list.push("gone"))
-// console.log(list.reverse())
 
 
 //DOUBLY LINKED LIST
@@ -728,7 +580,6 @@
 // }
 
 // let tree = new BinarySearchTree();
-// tree.insert(10)
 // tree.insert(19)
 // tree.insert(8)
 // tree.insert(21)
@@ -738,5 +589,61 @@
 // console.log(tree.InorderDFS())
 
 //TREE TRAVERSAL -- There are two ways to traverse a tree. the breadth first search and depth first search.
-//BREADTH FIRST SEARCH
+
+// function pallindrome(string){
+//     string = string.split(" ")
+//     let array = [];
+//     for(words of string){
+//         let check = words.split("").reverse().join("")
+//         if(check === words){
+//             array.push(words.length);
+//         }
+//     }
+//     return Math.max(...array)
+// }
+// console.log(pallindrome("madam you are a redivider at noon"))
+
+// function checkArr(array){
+//     let newObj = {}
+//     let newArr = []
+//     for(let i =0; i<array.length; i++){
+//         newObj[array[i]] = newObj[array[i]] + 1 || 1
+//     }
+//     for(let key in newObj){
+//         if(newObj[key] === 1){
+//             newArr.push(Number(key))
+//         }
+//     }
+//     return newArr
+// }
+// console.log(checkArr([1,2,3,4,3,5]))
+
+// function findLongestString(str){
+//     let longest = 0; seen = {};start = 0;
+ 
+//     for (let i = 0; i < str.length; i++) {
+//         let char = str[i];
+//         if (seen[char]) {
+//         start = Math.max(start, seen[char]);
+//         }
+//         longest = Math.max(longest, i - start + 1);
+//         seen[char] = i + 1;
+//     }
+//     return longest;
+
+// }
+// console.log(findLongestString("rithymsdftrokou"))
+
+// function nonRepeat(string){
+//    let newObj = {}; arr = []
+//    for(let i =0; i<string.length; i++){
+//         if(newObj[string[i]]){
+//             arr.push(string[i])
+//         } 
+//         newObj[string[i]] = i + 1   
+//    }
+//    let firstEl = arr.shift()
+//    return firstEl
+// }
+// console.log(nonRepeat("elelleetcodel"))
 
