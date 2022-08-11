@@ -127,9 +127,10 @@
 // checkName()
 
 //PROTOTYPE AND METHODS FOR STRINGS
-// let word = "White"
-// let anotherWord = "this is Raphael Rapha the best programmer using thunder pc lol."
-// let sentence = "this an absolutely beautiful life"
+
+
+let otherWords = "this is Raphael Rapha the best Rprogrammer using Rthunder pc lol."
+let sentence = "this an absolutely beautiful life"
 //String.prototype.sentence = "Hello Raph welcome to js methods and objects"
 // String.prototype.repeat = function(){
 //     return this + this;
@@ -141,7 +142,8 @@
 //console.log(Object.getPrototypeOf(word))
 //=======================================================
 //charAt: returns the position or index of the value
-//console.log(word.charAt(2))
+let word = "white"
+//console.log(word.charAt(0))
 
 //charCodeAt: returns the unicode of the value at index 2
 //console.log(word.charCodeAt(0))
@@ -150,48 +152,56 @@
 //console.log(String.fromCharCode(108,109,110,111))
 
 //concat() = this joins two or more string variables. the += is more effective since it doesnt create temp string for each concatenation.
-//word = word.concat(otherWords,sentence)
-//word += otherWords +sentence
+//word = word.concat("......",sentence)
+// word += sentence
 // console.log(word)
 
 //indexOf and lastIndexOf(): returns the position of a specified string. indexOf searched from the beginning...
 //of the string while lastIndexOf starts from the last character. When a character is not found it returns -1. this is a very useful logic.
-//console.log(word.indexOf("l")) returns 2
-//console.log(word.lastIndexOf("l")) returns 3
+//console.log(word.indexOf("i")) 
+//returns 2
+//console.log(word.lastIndexOf("w")) 
+//returns 3
 
 //match(): returns all matches as an array from a search against a regex. .toString() or join() converts array to strings
-//let match = anotherWord.match(/n/g) //returns ["n", "n"]
+//let match = otherWords.match(/Raphael/g) //returns ["n", "n"]
 //let match = anotherWord.match(/[Ra]/g) //returns ['h', 'R', 'a', 'p','h', 'a', 'h', 'p','a', 'h', 'p'] match values contained in the []
 // let match = otherWords.match(/(?:ha)+/g).join()
- //console.log(match)
+//console.log(match)
 
 //replace:returns the replaced new value after searching a string for specific value
-// word = word.replace("hello", "hi")
-// console.log(word)
+ //word = word.replace("w", "hi")
+ //console.log(word)
 
 //search(): returns -1 if no match was found or positive numvber if match was found.
-//console.log(anotherWord.search("raphael")) returns -1 since its no there cos search is case sensitive. there is no raphael 
+//console.log(otherWords.search("Raphael")) 
+//returns -1 since its no there cos search is case sensitive. there is no raphael 
 
 //slice(): extracts texts from one string and returns a new string with the extracted one.Special characters and whitespace counts as characters.
-//console.log(anotherWord.slice(8,15)) returns Raphael. it means start from index 8 to but not including index 15.
+//console.log(otherWords.slice(8,15)) 
+//returns Raphael. it means start from index 8 to but not including index 15.
 //console.log(anotherWord.slice(8)) returns Raphael Rapha the best programmer using thunder pc lol. from index 8 to the last index
-//console.log(anotherWord.slice(8,-4)) returns Raphael Rapha the best programmer using thunder pc . from index 8 to last index(n) -4
+//console.log(otherWords.slice(8,-4)) 
+//returns Raphael Rapha the best programmer using thunder pc . from index 8 to last index(n) -4
 
 //substr(): extracts text from one string with start index to the length of the string to be extracted.
-// anotherWord = anotherWord.substr(8,14) 
-// console.log(anotherWord) means start at index 8(0 based) expand 14(inclusive) characters to the right
+// otherWords = otherWords.substr(8,14) 
+// console.log(otherWords) 
+//means start at index 8(0 based) expand 14(inclusive) characters to the right
 
 //split(): converts strings to array while join() converts array to strings
 //this takes the whitespace delimiter and grabs every data btw the delimiter(what separates units from another) to form an element of an array and ...
 //can take limiters a s second parameter(how many units are included)
-// let anotherWordArr = anotherWord.split(" ")
-//let anotherWordArr = anotherWord.split("R") uses R as a delimiter
+//let anotherWordArr = otherWords.split(" ")
+//let anotherWordArr = otherWords.split("R") 
+//uses R as a delimiter
 //let anotherWordArr = anotherWord.split(" ",5) means use white space as delimiter and 5 limiter units of data in the Array
 //let anotherWordArr = anotherWord.split() means turn all strings to one big array with no delimiter or limiter
 //console.log(anotherWordArr)
 
 //valueOf(): returns the value of an Object primitive. eg Boolean object returns value of true or false.
-//console.log(word.valueOf()) returns hello
+//console.log(word.valueOf())
+// returns hello
 
 //=================================================================
 //ARRAY METHODS AND PEOPERTIES
@@ -209,6 +219,9 @@
 // }
 // let arr = ["violet", 'orange', 'purple', 'yellow']
 // let array = new Array("white","red", "blue", "black", "green")
+//let newArray = new Array(5)
+//let newArray = []
+
 // array.listArr()
 // console.log(array)
 // console.log(Object.getPrototypeOf(arr))
@@ -222,22 +235,24 @@
 //join(): converts array to strings. the default delimiter is comma, we can add our own custom delimiter like join("/")
 //let array = new Array("white","red", "blue", "black")
 //array = array.join()
-//arr = array.join("/")
+//arr = array.join("....")
 //console.log(arr)
 
 //reverse(): reverses the order of the element
-// let array = new Array("white","red", "blue", "black")
-// console.log(array.reverse())
+//let array = new Array("white","red", "blue", "black")
+//console.log(array.reverse())
 
 //sort(): sort has a callback function that corrects the default sort functionality. it takes a comparison function that
 //num1-num2(4-5 = -1 /4-6=- / 4-7=-.... 4--3= + ===> [-3,4,5,6,7,20,30,44,-5.2,1]);
 //(-3-4=-7 / -3-5=-8...-3--5.2=+2.2 ===> [-5.2,-3,4,5,6,7,20,30,44,1] do so till its properly arranged)
-// let array = [4,5,6,7,20,30,44,-3,-5.2,1]
+ //let array = [4,5,6,7,20,30,44,-3,-5.2,1]
+//let arr = ["d","a","b","c"]
+//console.log(array.sort())
 
 // function compareArr(num1,num2){
 //     return num1-num2
 // }
-//console.log(array.sort(compareArr))
+// console.log(array.sort(compareArr))
 //PROBLEM 4 -------------------------------
 // function compareColorArr(item1,item2){
 //     return item1.length - item2.length
@@ -278,13 +293,18 @@
 
 //slice(): extracts items from an array. it returns the extracted items when the initial index(n) and index(n-1) is reached.
 //let array = new Array("white","red", "blue", "black","green","violet","scarlet","cyan")
-//console.log(array.slice(2,5)) returns [ 'blue', 'black', 'green' ]
-//console.log(array.slice(-4)) returns [ 'green', 'violet', 'scarlet', 'cyan' ]
-//console.log(array.slice(-4,-2)) returns [ 'green', 'violet' ]
+// console.log(array.slice(2,3)) 
+//returns [ 'blue', 'black', 'green' ]
+//console.log(array.slice(-4)) 
+//returns [ 'green', 'violet', 'scarlet', 'cyan' ]
+//console.log(array.slice(-4,-2)) 
+//returns [ 'green', 'violet' ]
 
 //splice():it adds items at any position in the array. it means give me n(index) to length and replace spliced aread with third arg.
  //let array = new Array("white","red", "blue", "black","green","violet","scarlet","cyan")
- //console.log(array.splice(2,"yellow","scarlet")) //[ 'blue', 'black', 'green', 'violet', 'scarlet' ]
+ //let newArr = array.splice(2,2,"1")
+ //console.log(newArr)
+ //console.log(array.splice(2)) //[ 'blue', 'black', 'green', 'violet', 'scarlet' ]
  //console.log(array) //[ 'white', 'red', 'yellow', 'scarlet', 'cyan' ]
 
 //forEach():
@@ -334,38 +354,93 @@
 //makes and inventory of the inner firl func with variable mapped boy. as long as the fxn is processing
 //the js points at the surrounding variable called boy. function girl has  FREE VARIABLE of boy. this is closure
 
-let firstStr = "ahffaksfajeeubsne"
-let secondStr = "jefaa"
-//output:aksfaje
-function leastSubstring(first,second){
-    let maxArr = [];
-    let temp = 0;
-    let max = 0;
-    second = second.split("")
+// const truncateStr = (str,num)=>str.length > num ?console.log(str.slice(0, num).concat("....")):  console.log(str.concat("."))
+// truncateStr("A tisket a tasket A green and yellow basket",80)
+
+// function longestSub(str){
+//     let array = str.split(" "),newArr=[]
+//     for(items in array)newArr+=array[items].length
+//     return Math.max(...newArr)
+// }
+// console.log(longestSub("The quick brown fox jumped over the wall"))
+
+//RECURSION
+//count down numbers
+
+// function countDown(num){
+//     if(num <=0 ){
+//         console.log("ALL DONE")
+//         return
+//     }
+//     console.log(num)
+//     num--;
+//     return countDown(num)
+// }
+// console.log(countDown(10))
+
+//sum a range of numbers
+// function sumRange(num){
+//     if(num === 1)return 1;
+//     return num + sumRange(num-1)
+// }
+// console.log(sumRange(5))
+
+//factorial
+// function factorial(num){
+//     if(num === 1)return 1;
+//     return num * factorial(num-1)
+// }
+// console.log(factorial(5))
+
+//sum all odd numbers in range of number
+// function sumOddRange(num){
+//     let result = []
+//     function helper(input){
+//         if(input.length === 0)return;
+//         if(input[0] % 2 !== 0)result.push(input[0]);
+//         helper(input.slice(1))
+//     }
+//     helper(num);
+//     if(result.length === 1)return result[0];
+//     return result[0] + sumOddRange(result.splice(1))
+// }
+// console.log(sumOddRange([1,4,5,6,7,8,9,80,23,71,17,19,13]))
+
+//write a function to get the integers in a range(x,y) and sum them all
+// function range(x,y){
+//    if(y-x === 2){
+//     return [x+1]
+//    }
+//     let list = range(x,y-1)
+//     list.push(y-1);
+//     return list
+   
+// }
+// console.log(range(1,9))
+
+//write  a js program to find the greatest common divisor of two positiv number
+// function gcd(num1,num2){
     
-    let secLength = second.length
-    for(i=0; i<first.length-secLength; i++){
-        maxArr.push(first[i])
-    }
- 
-   
-    temp = max;
-    for(i=secLength; i<first.length; i++){
-         maxArr.shift()
-         maxArr.push(first[i])
-         console.log(maxArr)
-        //  let keyArr = []
-        //  for(key in second){
-        //     if(maxArr.includes(second[key])){
-        //         console.log(maxArr)
-        //         second = maxArr.slice(key,1)
-        //     }
-        //     console.log(keyArr+=second[key])  
-        // }
-   
-    }
+//     let i = 2;
+//     let num;
+//     if((num1 %  i !== 0)  && (num2 % i !== 0)){
+//         return [i]      
+//     }
+//     console.log(num1/i, num2/i)
+//     num+=i
+//     num = gcd(num1/i, num2/i);
     
-   
-   // return temp
+//     return num
+// }
+// console.log(gcd(336,360))
+
+function gcd(num1,num2){
+    let hcf = []
+    for(let i =2; i<=num1 && i<=num2; i++ ){
+        if(num1 % i == 0 && num2 % i == 0){
+            hcf.push(i)
+        }
+    }
+    return hcf.pop()
 }
-console.log(leastSubstring(firstStr,secondStr))
+console.log(gcd(60,72))

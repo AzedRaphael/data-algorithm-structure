@@ -19,7 +19,7 @@
 // }
 // checkDup([1,2,2,3,3])
 
-//seek and destroy
+// seek and destroy
 // function seekDestroy(arr){
 //     let newArr = []
 //     let args = [...arguments].slice(1)
@@ -33,33 +33,40 @@
 // }
 // seekDestroy([1,2,2,1,3,4,2], 2,3)
 
-//where at thou
-// let nameObj = [
-//     {"apple":1, "bat":2},
-//     {"apple":1, "bat":2, "cookie":2},
-//     {"apple":1},
-//     {"apple":2, "bat":1}
-// ]
+// where at thou
+let nameObj = [
+    {"apple":1, "bat":2},
+    {"apple":1, "bat":2, "cookie":2},
+    {"apple":1},
+    {"apple":2, "bat":1}
+]
 
-// let searchName = {"apple":1, "bat":2}
+let searchName = {"apple":1, "bat":2}
 
-// function search(obj,search){
-//    obj.map((item)=>{
-//         let items = Object.values(item)
-//         let otherName = Object.values(search).join()
-//         for(i in items){
-//             let index = otherName.indexOf(items[i])
-//             if(index >= 0){
-//                 console.log(item)
-//             }
-//         }
-//    })
-// }
-// search(nameObj, searchName)
+function search(obj,search){
+    let newArr = []
+    obj.forEach(items=>{
+        
+        let id = 0;
+        for(let keys in search){
+            console.log(items,search[keys])
+            if(items[keys] === search[keys]){
+                id+=1
+            }
+
+            if(id === Object.keys(search).length){
+                newArr.push(items)
+            }
+        }
+
+    })
+    return newArr
+}
+search(nameObj, searchName)
 
 
-//18/07/2022 MONDAY
-//SELECTIONSORT
+// 18/07/2022 MONDAY
+// SELECTIONSORT
 // function selectionSort(array){
 //     for(i=0; i<array.length; i++){
 //         let lowest = i;
@@ -79,7 +86,7 @@
 // }
 // console.log(selectionSort([21,45,65,1,76,100,0,2,4,7,2]))
 
-//INSERTION SORT:
+// INSERTION SORT:
 // function insertionSort(array){
 //     for(i=1; i<array.length; i++){
 //         for(j=i; j>0; j--){
@@ -94,7 +101,7 @@
 // }
 // console.log(insertionSort([2,0,14,21,3,100,1,5,4,-1]))
 
-//MERGE SORT:
+// MERGE SORT:
 // function mergeSort(leftArr,rightArr){
 //     const output = [];
 //     let leftIndex = 0;
@@ -116,22 +123,17 @@
 // }
 
 // function merge(array){
-//     if(array.length <= 1){ 
-//         return array
-//     }
+//     if(array.length <= 1)return array
 //     let middleIndex = Math.floor(array.length/2)
 //     let leftArr = array.slice(0,middleIndex)
 //     let rightArr = array.slice(middleIndex)
-//     return mergeSort(
-//         merge(leftArr),
-//         merge(rightArr)
-//     )
+//     return mergeSort(merge(leftArr),merge(rightArr))
 // }
 
 // console.log(merge([32,3,6,21,2,1]))
 
-//QUICK SORT: create the base function of the recursion, pivot set to value of last array, then compare each items to the pivot.
-//less than should be put in leftArr and vice versa.
+// QUICK SORT: create the base function of the recursion, pivot set to value of last array, then compare each items to the pivot.
+// less than should be put in leftArr and vice versa.
 
 // const quickSort = array=>{
 //     if(array.length === 1){
@@ -159,8 +161,8 @@
 // }
 // console.log(quickSort([90,87,12,3,32,27,1,76,0,78]))
 
-//RADIX SORT: find number with max digit count(eg 12,34, 567 => 3), iterate through the max digit and create 10 empty arrays,iterate thru array,
-//getDigit starting from last digit in number then push num in an array. Finally concat the buckets in one big array 
+// RADIX SORT: find number with max digit count(eg 12,34, 567 => 3), iterate through the max digit and create 10 empty arrays,iterate thru array,
+// getDigit starting from last digit in number then push num in an array. Finally concat the buckets in one big array 
 // function getDigit(digit,num){
 //    return Math.floor(Math.abs(digit) / Math.pow(10,num) % 10)
 // }
@@ -192,8 +194,8 @@
 // }
 // console.log(radixSort([12,4,5,98,312,2,89,57,3678,972156,1]))
 
-//ES2015 SYNTAX
-//class is a blueprint for creating object with pre-defined properties and methods.
+// ES2015 SYNTAX
+// class is a blueprint for creating object with pre-defined properties and methods.
 
 // class Student{
 //     constructor(firstName,lastName,year){
@@ -233,12 +235,12 @@
 // console.log(firstStudent.addScores(100))
 // console.log(firstStudent.scores)
 // console.log(firstStudent.averageScore())
-//console.log(Student.enrolledStudents())
+// console.log(Student.enrolledStudents())
 
-//SINGLY LISTED LISTS
+// SINGLY LISTED LISTS
 
 
-//DOUBLY LINKED LIST
+// DOUBLY LINKED LIST
 // class Node{
 //     constructor(value){
 //         this.value = value;
@@ -378,8 +380,8 @@
 // first.push(10);first.push(11);first.push(16);first.push(16);
 // console.log(first.remove(2))
 
-//STACKS AND QUEUES: stacks follows the lifo principle which is the last in first out while a queue follow the fifo pirnciple
-//first in first out.
+// STACKS AND QUEUES: stacks follows the lifo principle which is the last in first out while a queue follow the fifo pirnciple
+// first in first out.
 // class Node {
 //     constructor(value){
 //         this.value = value;
@@ -430,7 +432,7 @@
 // firstStack.unshift("first");firstStack.unshift("second");firstStack.unshift("third")
 // console.log(firstStack.shift())
 
-//QUEUE:FIFO Principle
+// QUEUE:FIFO Principle
 // class Node{
 //     constructor(value){
 //         this.value = value;
@@ -480,7 +482,7 @@
 // console.log(firstQueue)
 // console.log(firstQueue.dequeue())
 
-//BINARY SEARCH TREE
+// BINARY SEARCH TREE
 // class Node {
 //     constructor(value){
 //         this.value = value;
@@ -588,7 +590,7 @@
 // tree.insert(6)
 // console.log(tree.InorderDFS())
 
-//TREE TRAVERSAL -- There are two ways to traverse a tree. the breadth first search and depth first search.
+// TREE TRAVERSAL -- There are two ways to traverse a tree. the breadth first search and depth first search.
 
 // function pallindrome(string){
 //     string = string.split(" ")
@@ -633,7 +635,7 @@
 
 // }
 // console.log(findLongestString("rithymsdftrokou"))
-
+ 
 // function nonRepeat(string){
 //    let newObj = {}; arr = []
 //    for(let i =0; i<string.length; i++){
@@ -646,4 +648,201 @@
 //    return firstEl
 // }
 // console.log(nonRepeat("elelleetcodel"))
+
+//INSERTIONSORT
+// function insertionSort(array){
+//     for(let i = 0; i<array.length; i++){
+//         let noSwap = true
+//         for(let j=1; j<array.length; j++){
+//             console.log(array[j], array[j-1], array)
+//             if(array[j] < array[j-1]){
+//                 let temp = array[j]
+//                 array[j] = array[j-1]
+//                 array[j-1] = temp
+//                 noSwap = false
+//             }
+//         }
+//         if(noSwap)break
+//     }
+//     return array
+// }
+// console.log(insertionSort([2,3,4,1,9,7]))
+
+// function merge(leftArr,rightArr){
+//     let newArr = []
+//     let leftIndex = 0;
+//     let rightIndex = 0
+//     while(leftIndex < leftArr.length && rightIndex< rightArr.length){
+//         let leftElement = leftArr[leftIndex]
+//         let rightElement = rightArr[rightIndex]
+
+//         if(leftElement < rightElement){
+//             newArr.push(leftElement)
+//             leftIndex++
+//         }else {
+//             newArr.push(rightElement)
+//             rightIndex++
+//         }
+//     }
+    
+//     return [...newArr, ...leftArr.slice(leftIndex),...rightArr.slice(rightIndex)]
+// }
+
+// function mergeSort(array){
+//     if(array.length <= 1)return array
+//     let middleIndex = Math.floor(array.length/2);
+
+//     let leftArr = array.slice(0,middleIndex)
+//     let rightArr = array.slice(middleIndex)
+
+//     return merge(mergeSort(leftArr), mergeSort(rightArr))
+
+// }
+// console.log(mergeSort([2,9,1,4,5,7]))
+
+// BINARY SEARCH TREE
+// class Node {
+//     constructor(value){
+//         this.value = value;
+//         this.left= null;
+//         this.right = null;
+//     }
+// }
+
+// class BinarySearchTree{
+//     constructor(){
+//         this.root = null;
+//     }
+//     insert(value){
+//         let newNode = new Node(value)
+//         if(this.root === null){
+//             this.root = newNode;
+//             return this;
+//         }else{
+//             var current = this.root;
+//             while(true){
+//                 if(value === current.value) return undefined
+//                 if(value < current.value){
+//                     if(current.left === null){
+//                         current.left = newNode;
+//                         return this
+//                     }else{
+//                         current = current.left;
+//                     }
+//                 }else if(value > current.value){
+//                     if(current.right === null){
+//                         current.right = newNode;
+//                         return this;
+//                     }else{
+//                         current = current.right
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     find(value){
+//         if(this.root === null) return false;
+//         let current = this.root;
+//         let found = false;
+//         while(current && !found){
+//             if(value < current.value){
+//                 current = current.left;
+//             }else if(value > current.value){
+//                 current = current.right;
+//             }else{
+//                 found = true;
+//             }
+//         }
+//         if(!found) return `${value} is not in the tree`
+//         return current;
+//     }
+//     BFS(){
+//         let data = [], queue = [], node = this.root;
+//         queue.push(node);
+//         while(queue.length){
+//             node = queue.shift();
+//             data.push(node.value);
+//             if(node.left)queue.push(node.left)
+//             if(node.right)queue.push(node.right)
+//         }
+//         return data
+//     }
+//     PreDFS(){
+//         let data = [],current = this.root;
+//         function tranverse(node){
+//             data.push(node.value);
+//             if(node.left)tranverse(node.left);
+//             if(node.right) tranverse(node.right);
+//         }
+//         tranverse(current)
+//         return data;
+//     }
+//     PostDFS(){
+//         let data =[], current=this.root;
+//         function tranverse(node){
+//             if(node.left)tranverse(node.left);
+//             if(node.right) tranverse(node.right);
+//             data.push(node.value);
+//         }
+//         tranverse(current);
+//         return data;
+//     }
+//     InorderDFS(){
+//         let data = [], current = this.root;
+//         function transverse(node){
+//             if(node.left)transverse(node.left);
+//             data.push(node.value);
+//             if(node.right)transverse(node.right);
+//         }
+//         transverse(current);
+//         return data
+//     }
+// }
+
+
+// class Node{
+//     constructor(value){
+//         this.value = value;
+//         this.left= null;
+//         this.right = null
+//     }
+// }
+// class BST{
+//     constructor(){
+//         this.root = null;
+//     }
+//     insert(value){
+//         let newNode = new Node(value);
+//         if(!this.root){
+//             this.root = newNode;
+//             return globalThis;
+//         }else{
+//             let current = this.root;
+//             while(true){
+//                 if(value === current.value) return undefined
+//                 if(value < current.value ){
+//                     if(current.left === null){
+//                         current.left = newNode;
+//                         return this;
+//                     }else{
+//                         current = current.left;
+//                     }
+//                 }else{
+//                     if(current.right === null){
+//                         current.right = newNode;
+//                         return this;
+//                     }else{
+//                         current = current.right;
+//                     }
+//                 }  
+//             }
+//         }     
+//     }
+// }
+
+// let firstBST = new BST();
+// firstBST.insert(100);firstBST.insert(90);firstBST.insert(110);firstBST.insert(89);firstBST.insert(91);
+// console.log(firstBST)
+
+//LIST REVIEW
 

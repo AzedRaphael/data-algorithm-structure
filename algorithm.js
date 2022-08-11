@@ -1072,15 +1072,392 @@
 
 //sum primes
 
-function sumPrimes(number){
-    let array = []
-    let result = [2,3]
-    for(let i=2; i<number; i++){
-        console.log(number[i])
-        if(number[i] % i == 0){
-            array.push(number[i])
+// function sumPrimes(number){
+//     let array = []
+//     let result = [2,3]
+//     for(let i=2; i<number; i++){
+//         console.log(number[i])
+//         if(number[i] % i == 0){
+//             array.push(number[i])
+//         }
+//     }
+//     return array
+// }
+// console.log(sumPrimes(10))
+
+//MULTIPLE POINTER: this increments a 
+// function appearTwice(string){
+//     string = string.split("")
+//    let i = 0;
+//    for(let j = i+1; j<string.length; j++){
+//         if(string[i] !== string[j]){
+//             i++;
+//             string[i] = string[j]
+//         }
+//         return string[i + 1]
+//    }
+// }
+// console.log(appearTwice("abaaczz"))
+
+// function sumZero(arr){
+//     let left = 0;
+//     let right = arr.length -1 
+//     while(left < right){
+//         let sum = arr[left] + arr[right]
+//         if(sum===0)return [arr[left], arr[right]]
+//         else if(sum > 0) right--;
+//         else left++
+//     }
+// }
+// console.log(sumZero([-4,-3,-2,-1,0,10]))
+
+// function armstrong(n){
+//     let num = String(n).split("")
+//     let arrLength = num.length
+//     let sum = 0;
+//     for(let i = 0; i<num.length; i++){
+//         sum += Math.pow(num[i], arrLength);
+//     }
+//    if(sum === n)return true;
+//    return false
+// }
+// console.log(armstrong(371))
+
+//SELECTIONSORT
+// function selectionSort(array){
+//     for(let i =0; i<array.length; i++){
+//         let lowest = i;
+//         for(let j = i+1; j<array.length; j++){
+//             if(array[j] < array[lowest]){
+//                 lowest = j
+//             }
+//         }
+//         if(i !== lowest){
+//             let temp = array[i]
+//             array[i] = array[lowest]
+//             array[lowest] = temp
+//         }
+//     }
+//     return array
+// }
+// console.log(selectionSort([7,34,23,9,12,1,0,-3,100,78]))
+
+//INSERTION SORT
+// function insertionSort(array){
+//     for(let i =1; i<array.length; i++){
+//         for(let j = i; j>0; j--){
+//             if(array[j] < array[j-1]){
+//                 let temp = array[j]
+//                 array[j] = array[j-1]
+//                 array[j-1] = temp 
+//             }
+//         }
+//     }
+//     return array
+// }
+// console.log(insertionSort([7,34,23,9,12,1,0,-3,100,78]))
+
+//BUBBLE SORT
+// function bubbleSort(array){
+//     let noSwaps;
+//     for(let i =array.length; i> 0; i--){
+//         noSwaps = true
+//         for(let j=0; j<i-1; j++){
+//             if(array[j] > array[j+1]){
+//                 let temp = array[j+1]
+//                 array[j+1] = array[j]
+//                 array[j] = temp
+//                 noSwaps = false;
+//             }
+//         }
+//         if(noSwaps)break;
+//     }
+//     return array
+// }
+// console.log(bubbleSort([7,34,23,9,12,1,0,-3,100,78]))
+
+//MERGE SORT
+// function merge(leftArr,rightArr){
+//     let leftIndex = 0;
+//     let rightIndex = 0
+//     let newArr = []
+
+//     while(leftIndex < leftArr.length && rightIndex < rightArr.length){
+//         let leftEl = leftArr[leftIndex]
+//         let rightEl = rightArr[rightIndex]
+        
+
+//         if(leftEl < rightEl){
+//             newArr.push(leftEl)
+//             leftIndex++
+//         }else{
+//             newArr.push(rightEl)
+//             rightIndex++
+//         }
+//     }
+//     console.log(rightArr.slice(rightIndex) + " " + "is from right arr")
+//     console.log(leftArr.slice(leftIndex ) + " " + "is from left array")
+//     console.log(newArr + " " + "is from new array")
+//     return [...newArr, ...leftArr.slice(leftIndex), ...rightArr.slice(rightIndex)]
+// }
+// function mergeSort(array){
+//     if(array.length <= 1) return array
+//     let middleIndex = Math.floor(array.length/2)
+//     let leftArr = array.slice(0,middleIndex)
+//     let rightArr = array.slice(middleIndex)
+
+//     return merge(mergeSort(leftArr), mergeSort(rightArr))
+// }
+// console.log(mergeSort([7,34,23,9,12,1,0,-3,100,78]))
+
+//Recursion problems
+// function productOfArray(array){
+//     if(array.length === 1) return array[0]
+//     return array[0] * productOfArray(array.slice(1))
+// }
+// console.log(productOfArray([2,3,4,5,6]))
+
+//REVERSE A STRING RECURSIVELY
+// function recursiveReverse(string){
+//     let result = []
+//     function helper(input){
+//         if(input.length === 0) return
+//         if(input.length >= 1) result.unshift(input[0])
+//         helper(input.slice(1));
+//     }
+//     helper(string)
+//     return result.join().replace(/,/g,"")
+// }
+// console.log(recursiveReverse("awesome"))
+
+// const isOdd = value=> value%2 !== 0;
+
+// function checkOdd(array,Odd){
+//     if(array.length === 0) return false;
+//     if(Odd(array[0])) return true;
+//     return checkOdd(array.slice(1),Odd)
+// }
+// console.log(checkOdd([2,4,6,8,9], isOdd))
+
+//COLLECT STRING IN AN OBJECT
+// const obj = {
+//     stuff: "foo",
+//     data: {
+//         val: {
+//             thing: {
+//                 info: "bar",
+//                 moreInfo: {
+//                     evenMoreInfo: {
+//                         weMadeIt: "baz"
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// function collectStrings(object){
+//     let result = []
+//     for(keys in object){
+//         if(object[keys].constructor === Object)result.push(...collectStrings(object[keys]))
+//         else if(object[keys].constructor === undefined)return
+//         else result.push(object[keys])
+//     }
+//     return result
+// }
+// console.log(collectStrings(obj))
+
+// let obj = {
+//     num: 1,
+//     test: [],
+//     data: {
+//         val: 4,
+//         info: {
+//             isRight: true,
+//             random: 66
+//         }
+//     },
+//     test2: {
+//         value: 10,
+//         value2:20,
+//         info1: {
+//             isRight: false,
+//             random: 66,
+//             info2: {
+//                 isFalse: true,
+//                 random: 50,
+//                 info3: {
+//                     isleft: true,
+//                     random: 12
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// function stringifyNumbers(object){
+//     let newObj = {}
+//     for(key in object){
+//         if(object[key].constructor === Number){
+//             newObj[key] = object[key].toString()
+//         }
+//         else if(object[key].constructor === Object){
+//             newObj[key] = stringifyNumbers(object[key])
+//         }
+//         else {
+//             newObj[key] = object[key]
+//         }
+//     }
+//     return newObj
+// }
+// console.log(stringifyNumbers(obj))
+
+// function power(num1,num2){
+//     if(num2 === 0) return 1;
+//     return num1 * replicate(num1,num2-1)
+// }
+// console.log(power(3,5))
+
+//REPLICATE NUMBERS BY TIMES
+// function replicate(num1,num2){
+//     let result = []
+//     function helper(input1,input2){
+//         if(input2 === 0)return;
+//         if(input2 >= 1) result.push(input1)
+//         helper(input1, input2 - 1)
+//     }
+//     helper(num1,num2)
+//     return result
+// }
+
+// function replicate(num1,num2){
+//     if(num2 <= 0) return [];
+//     return [num1].concat(replicate(num1,num2 - 1))
+// }
+// console.log(replicate(3,5))
+
+// function totalIntegers(array){
+//     let result = [];
+//    for(let i =0 ; i<array.length; i++){
+//         if(Array.isArray(array[i])){
+//             result.push(...totalIntegers(array[i]))
+//         }else{
+//             result.push(array[i])
+//         }
+//    }
+//    return result
+// }
+// console.log(totalIntegers([ [[5]], [3], 0, 2, [4, [5,6]], 8, 9]))
+
+//RECURSION
+// function range(number){
+//     if(number === 0) return ;
+//     console.log(number)
+//     number--
+//     range(number)
+// }
+// range(5)
+
+//power
+// function power(num1,num2){
+//     if(num2 === 1) return num1;
+//     return num1 * power(num1, num2 - 1)
+// }
+// console.log(power(2,3))
+
+// function reverseString(array){
+//     let result = []
+//     let arr = array.split("")
+//     function helper(input){
+//         if(input.length === 0 ) return;
+//         if(input.length >= 1 ) result.unshift(input[0]);
+//         helper(input.slice(1))
+//     }
+//     helper(arr)
+//     return result;
+// }
+// console.log(reverseString("john"))
+
+
+//QUESTION
+//Write a recursive function called someRecursive which accepts an array and a callback. The function returns true if a 
+//single value in the array returns true when passed to the callback. Otherwise it returns false.
+
+// SAMPLE INPUT / OUTPUT
+// const isOdd = val => val % 2 !== 0;
+
+// someRecursive([1,2,3,4], isOdd) // true
+// someRecursive([4,6,8,9], isOdd) // true
+// someRecursive([4,6,8], isOdd) // false
+// someRecursive([4,6,8], val => val > 10); // false
+
+// const obj = {
+//     stuff: "foo",
+//     data: {
+//         val: {
+//             thing: {
+//                 info: "bar",
+//                 moreInfo: {
+//                     evenMoreInfo: {
+//                         weMadeIt: "baz"
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+//SORTING ALGORITHM
+// function bubbleSort(array){
+//     for(let i = array.length; i> 0; i-- ){
+//         for(let j = 0; j<i-1; j++){
+//             if(array[j] > array[j+1]){
+//                 let temp = array[j]
+//                 array[j] = array[j+1]
+//                 array[j+1] = temp
+//                 console.log(array[j], array[j+1], array)
+//             }
+//         }
+//     }
+//     return array
+// }
+// console.log(bubbleSort([10,9,4,5,8,3,2,0,1,7]))
+
+//selection sort
+
+// function selectionSort(array){
+//     for(let i =0; i<array.length; i++){
+//         let lowest = i;
+//         for(let j = i+1; j<array.length; j++){
+//             if(array[j] < array[lowest]){
+//                 lowest = j
+//             }
+//         }
+//         if(i !== lowest){
+//             let temp = array[i]
+//             array[i] = array[lowest]
+//             array[lowest] = temp
+//         }
+//     }
+//     return array
+// }
+// console.log(selectionSort([7,34,23,9,12,1,0,-3,100,78]))
+
+function selectionSort(array){
+    for(let i =0; i<array.length; i++){
+        let lowest = i;
+        for(let j= i+1; j<array.length; j++){
+            if(array[j] < array[lowest]){
+                lowest = j
+            }
+        }
+        if(i !== lowest){
+            let temp = array[i]
+            array[i] = array[lowest]
+            array[lowest] = temp
         }
     }
     return array
 }
-console.log(sumPrimes(10))
+
+console.log(selectionSort([1,10,4,5,2,-1]))

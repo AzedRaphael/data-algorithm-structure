@@ -144,5 +144,5 @@ class PriorityQueue{
 let ER = new PriorityQueue();
 ER.enqueue("common cold", 1);ER.enqueue("high fever",2);ER.enqueue("gun shot wond",5);ER.enqueue("consussion",3);ER.enqueue("delivery",4)
 
-console.log(ER.dequeue());console.log(ER.dequeue());console.log(ER.dequeue());console.log(ER.dequeue());
+console.log(ER.dequeue());console.log(ER.dequeue());console.log(ER.dequeue());console.log(ER.dequeue());                                                                                                                                                                                
 console.log(ER)
